@@ -34,17 +34,17 @@ $(function(){
 <section id="demo"><h1>Demo</h1>				<!--section demo-->
 <div id="myform">
 	<p> First Name :	<!--show message element-->
-		<input type="text" name="require" onBlur="validLite.getValidata(this);" placeholder="Required"
+		<input type="text" name="firstname" onBlur="validLite.getValidata(this);" placeholder="Required"
 			data-validata='{
 				"pattern": "require",
 				"error": {
 					"errId":	"err_firstname",
-					"errMsg":	"This is First Name Error Msg",
+					"errMsg":	"This is First Name Error message",
 					"errClass":	"errorClass"
 				},
 				"correct": {
 					"corId":	"cor_firstname",
-					"corMsg":	"This is First Name Correct Msg",
+					"corMsg":	"This is First Name Correct message",
 					"corClass":	"correctClass"
 				}
 			}'
@@ -53,54 +53,72 @@ $(function(){
 		<span id="cor_firstname" class="CSS3 flash corElemClass" style="display:none;">This is First Name Correct</span>
 	</p>
 	<p> Surname :		<!--create message element-->
-		<input type="text" name="mobile" onBlur="validLite.getValidata(this);" placeholder="Required"
+		<input type="text" name="surname" onBlur="validLite.getValidata(this);" placeholder="Required"
 			data-validata='{
 				"pattern": "require",
 				"error": {
 					"errId":	"err_Surname",
-					"errMsg":	"This is Surname Error Msg",
+					"errMsg":	"This is Surname Error message",
 					"errClass":	"errorClass"
 				},
 				"correct": {
 					"corId":	"cor_Surname",
-					"corMsg":	"This is Surname Correct Msg",
+					"corMsg":	"This is Surname Correct message",
 					"corClass":	"correctClass"
 				}
 			}'
 		/>
 	</p>
-	<p> Mobile :		<!--without correct message-->
+	<p> *Mobile :		<!--without correct message and anti-validate-->
 		<input type="text" name="mobile" onBlur="validLite.getValidata(this);" placeholder="0912345678"
 			data-validata='{
 				"pattern": "mobile",
 				"error": {
 					"errId":	"err_mobile",
-					"errMsg":	"This is Mobile Error Msg",
+					"errMsg":	"This is Mobile Error message",
 					"errClass":	"errorClass"
-				}
+				},
+				"mode": "false"
 			}'
 		/>
 		<span id="err_mobile" class="CSS3 flash errElemClass" style="display:none;">This is Mobile Error</span>
 	</p>
 	<p> Telphone :		<!--without correct message and custom error class-->
-		<input type="text" name="phone" onBlur="validLite.getValidata(this);" onClick="validLite.clearValidata(this);"
+		<input type="text" name="telphone" onBlur="validLite.getValidata(this);" onClick="validLite.clearValidata(this);"
 			placeholder="02-1234-5678"
 			data-validata='{
 				"pattern": "telphone",
 				"error": {
 					"errId":	"err_telphone",
-					"errMsg":	"This is Error Telphone Msg"
+					"errMsg":	"This is Telphone Error message"
 				},
 				"correct": {
-					"corMsg":	"This is Telphone Correct Msg",
+					"corMsg":	"This is Telphone Correct message",
 					"corClass":	"correctClass"
 				}
 			}'
 		/>
-		<span id="err_telphone" class="errElemClass" style="display:none;">This is Error Telphone</span>
+		<span id="err_telphone" class="errElemClass" style="display:none;">This is Telphone Error</span>
+	</p>
+	<p> *Date :			<!--alert message and anti-validate-->
+		<select name="date" onBlur="validLite.getValidata(this);"
+			data-validata='{
+				"pattern": "require",
+				"mode": "false",
+				"error": {
+					"errId":	"alert",
+					"errMsg":	"This is Date Error message"
+				}
+			}'
+		>
+		<option value=""></option>
+		<option value="2013-12-01">2013-12-01</option>
+		<option value="2013-12-05">2013-12-05</option>
+		</select>
 	</p>
 	<input type="button" value="Submit" onClick="validLite.getValidata();"/>
 	<input type="button" value="Clear" onClick="validLite.clearValidata();"/>
+	<span>*<i>Asterisk</i> is anti-validate</span>
 </div>
 </section><hr>
 
@@ -148,17 +166,18 @@ $(function(){
 <div class="textbox"><pre><xmp>
 <input type="text" name="require"
    data-validata='{
-      "pattern": "require",
-      "error": {
-         "errId": "err_firstname",	//message id
-         "errMsg": "Error Message",	//message
-         "errClass": "errorClass"	//custom class name
+      "pattern": "require",         //Required
+      "error": {                    //Optional
+         "errId": "err_firstname",	//(optional) message id
+         "errMsg": "Error Message",	//(optional) message
+         "errClass": "errorClass"	//(optional) custom class name
       },
-      "correct": {
-         "corId": "cor_firstname",	//message id
-         "corMsg": "Correct Message",	//message
-         "corClass": "correctClass"	//custom class name
-      }
+      "correct": {                  //Optional
+         "corId": "cor_firstname",	//(optional) message id
+         "corMsg": "Correct Message",	//(optional) message
+         "corClass": "correctClass"	//(optional) custom class name
+      },
+      "mode": "false"               //Optional
    }'
 />
 </xmp></pre></div><br>
@@ -239,6 +258,7 @@ if( element of data.errId exists ) {
 </xmp></div>
 <p><b>4. <i>"data-validata"</i> &nbsp;&nbsp; In the validate case, setting the pattern is required and the other parameters are optional.</b></p>
 <p><b>5. You can modify the default pattern to a appropriate pattern directly.</b></p>
+<p><b>6. Optional parameter <i>"mode"</i> is a anti-validate setting, when setting to "false" then opposite to the validation pattern is True.</b></p>
 </div>
 </section><hr>
 

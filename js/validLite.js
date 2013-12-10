@@ -3,7 +3,7 @@
 * 
 * @Date 	20131203
 * @Author 	ShawnWu
-* @Version 	release v3.0.20131209
+* @Version 	release v3.4.20131211
 * @License 	under the MIT License
 **/
 var myPatterns = {
@@ -53,10 +53,13 @@ jQuery.fn.validLite = function(settings) {
 				errClass = opt.error ? opt.error.errClass || '' : undefined,
 				corId = opt.correct ? opt.correct.corId || '' : undefined,
 				corMsg = opt.correct ? opt.correct.corMsg || '' : undefined,
-				corClass = opt.correct ? opt.correct.corClass || '' : undefined;
+				corClass = opt.correct ? opt.correct.corClass || '' : undefined,
+				mode = opt.mode || 1, testTrue = 1, testFalse = 0;
+			
+			if( mode == 'false' ) { testTrue = 0; testFalse = 1; }
 			
 			if( $(this).is(":visible") )
-				pattern.test($(this).val()) ? $(this).data("validstatus", 1) : $(this).data("validstatus", 0);
+				pattern.test($(this).val()) ? $(this).data("validstatus", testTrue) : $(this).data("validstatus", testFalse);
 			else
 				$(this).data("validstatus", 1);
 			
@@ -92,13 +95,15 @@ jQuery.fn.validLite = function(settings) {
 			
 			if( $(this).is(":visible") ) {
 				if( pattern.test($(this).val()) ) {
-					if( errClass ) $(this).removeClass(errClass);
+					var errorClass = errClass || settings.setting.errClassName;
+					if( errorClass ) $(this).removeClass(errorClass);
 					if( settings.setting.corClassShow ) {
 						var correctClass = corClass || settings.setting.corClassName;
 						if( correctClass ) $(this).addClass(correctClass);
 					}
 				} else {
-					if( corClass ) $(this).removeClass(corClass);
+					var correctClass = corClass || settings.setting.corClassName;
+					if( correctClass ) $(this).removeClass(correctClass);
 					if( settings.setting.errClassShow ) {
 						var errorClass = errClass || settings.setting.errClassName;
 						if( errorClass ) $(this).addClass(errorClass);
