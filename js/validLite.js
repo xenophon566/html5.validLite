@@ -120,7 +120,7 @@ jQuery.fn.validLite = function(settings) {
 			});
 			if( validstatus ) validLite.clearValidata();
 			return validstatus ? true : false;
-		}
+		} else return $(e).data("validstatus") || 0;
 	}
 	
 	this.clearValidata = function(e) {

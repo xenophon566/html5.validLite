@@ -28,6 +28,9 @@ $(function(){
 		}
 	});
 });
+function validLiteBtn(valid_Id) {	//Get the single validate result
+	alert( !!validLite.getValidata('input[name="'+valid_Id+'"]') );
+}
 </script>
 </head>
 <body>
@@ -116,6 +119,7 @@ $(function(){
 		<option value="2013-12-05">2013-12-05</option>
 		</select>
 	</p>
+	<input type="button" value="Surname" onClick="validLiteBtn('surname');"/>
 	<input type="button" value="Submit" onClick="validLite.getValidata();"/>
 	<input type="button" value="Clear" onClick="validLite.clearValidata();"/>
 	<span>*<i>Asterisk</i> is anti-validate</span>
@@ -211,6 +215,11 @@ if( element of data.errId exists ) {
    <b>and setting the id to <i>"data.errId"</i>, class to <i>"setting.errElemClass"</i></b>
    <b>and insert message to element</b>
 }
+</pre></div><br>
+
+4. Pseudocode of single validate
+<div class="textbox"><pre>
+<b>validate result</b> = validLite.getValidata(element)
 </pre></div><br>
 
 <h4>My default patterns</h4>
