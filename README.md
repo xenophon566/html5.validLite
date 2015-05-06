@@ -1,4 +1,4 @@
-Html5.validLite
+ValidLite
 =========
 
 ### Html5.validLite project under the MIT License
@@ -7,10 +7,10 @@ Html5.validLite
 Html5.validLite
 
 ####Type 
-Jquery Plugin
+Plugin
 
 ####Describe
-ValidLite is a lite validation plugin that easy to use within your project.
+ValidLite is a lite validation plugin that easy to use in your project.
 
 #### Feature 
 1.	Easy to use.
