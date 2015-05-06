@@ -3,13 +3,13 @@ ValidLite
 
 ### Html5.validLite project under the MIT License
 
-####Name 
+#### Name 
 Html5.validLite
 
-####Type 
+#### Type 
 Plugin
 
-####Describe
+#### Describe
 ValidLite is a lite validation plugin that easy to use in your project.
 
 #### Feature 
@@ -19,8 +19,8 @@ ValidLite is a lite validation plugin that easy to use in your project.
 4.	Customize validation pattern.
 5.	Customize stylesheet and CSS3 animation to show your message.
 
-####Base on
+#### Base on
 HTML5, CSS3, Javascript, JQuery
 
-####License
-under the MIT License <p>Copyright (c) 2013 Shawn Wu
+#### License
+under the MIT License Copyright(c) 2013 Shawn Wu
