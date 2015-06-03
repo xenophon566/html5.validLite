@@ -25,8 +25,64 @@
 <h1>
 <a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h1>
 
+<h3>
+<a id="parameters-setting" class="anchor" href="#parameters-setting" aria-hidden="true"><span class="octicon octicon-link"></span></a>parameters setting</h3>
+
+<div><pre>
+$(function(){
+   $("#myform").validLite({
+      pattern: {
+        number: /^\d+$/     //validate pattern (Default: myPattern)
+      },
+      setting: {
+        getValid: '#myform',    //setting the validate scope (Default: body)
+        corMsgShow: true,   //show an correct message (Default: false)
+        errMsgShow: true,   //show an error message (Default: true)
+        corClassShow: true, //show an correct class (Default: false)
+        errClassShow: true, //show an error class (Default: true)
+        corClassName: 'correctClass',   //correct class name
+        errClassName: 'errorClass', //error class name
+        corElem: 'span',    //create an element of correct message
+        errElem: 'span',    //create an element of error message
+        corElemClass: 'corElemClass',   //class of correct element
+        errElemClass: 'errElemClass'    //class of error element
+      }
+   });
+});
+</pre></div>
+
+<h3>
+<a id="common-function" class="anchor" href="#common-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Common function</h3>
+
+<div><pre>
+validLite.getValidata(this);    //individual validate
+validLite.getValidata();    //overall validate
+validLite.clearValidata(this);  //clear individual message and class
+validLite.clearValidata();  //clear overall message and class
+</pre></div>
+
+<h3>
+<a id="for-example-individual-validate" class="anchor" href="#for-example-individual-validate" aria-hidden="true"><span class="octicon octicon-link"></span></a>For example individual validate</h3>
+
+<p><code>&lt;input type="text" name="require" onBlur="validLite.getValidata(this);"/&gt;</code></p>
+
+<h3>
+<a id="for-example-overall-validate" class="anchor" href="#for-example-overall-validate" aria-hidden="true"><span class="octicon octicon-link"></span></a>For example overall validate</h3>
+
+<p><code>&lt;input type="button" value="Submit" onClick="validLite.getValidata();"/&gt;</code></p>
+
 <h1>
 <a id="document" class="anchor" href="#document" aria-hidden="true"><span class="octicon octicon-link"></span></a>Document</h1>
+
+<h3>
+<a id="setting-method" class="anchor" href="#setting-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>setting method</h3>
+
+<div><pre>
+if( setting.errMsgShow == true ) {
+   if( data.errId == !empty )
+      show message
+} else Do not show error message
+</pre></div>
 
 <h1>
 <a id="validlite" class="anchor" href="#validlite" aria-hidden="true"><span class="octicon octicon-link"></span></a>ValidLite</h1>
