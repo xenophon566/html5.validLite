@@ -2,21 +2,45 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Pica - high quality image resize in browser</title>
+    <title>My ValidLite</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/myStyle.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="css/animate.css"/>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/_jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/validLite.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <style>
-        #asd {
-            color: red;
-        }
-    </style>
+    
     <script>
-        alert('Welcome');
-        console.warn('asdzxc');
+    $(function(){
+        $("#myform").validLite({
+            pattern: {
+                number: /^\d+$/					//validate pattern (Default: myPattern)
+            },
+            setting: {
+                getValid: '#myform',			//get validate DOM (Default: body)
+                corMsgShow: true,				//show an correct message (Default: false)
+                errMsgShow: true,				//show an error message (Default: true)
+                corClassShow: true,				//show an correct class (Default: false)
+                errClassShow: true,				//show an error class (Default: true)
+                corClassName: 'correctClass',	//correct class name (Default: correctClass)
+                errClassName: 'errorClass',		//error class name (Default: errorClass)
+                corElem: 'span',				//create an element of correct message (Default: span)
+                errElem: 'span',				//create an element of error message (Default: span)
+                corElemClass: 'corElemClass',	//class of correct element (Default: corElemClass)
+                errElemClass: 'errElemClass'	//class of error element (Default: errElemClass)
+            }
+        });
+    });
+    function validLiteBtn(valid_Id) {	//Get the single validate result
+        alert( !!validLite.getValidata('input[name="'+valid_Id+'"]') );
+    }
     </script>
+    
   </head>
   <body>
     <section class="page-header">
@@ -28,13 +52,100 @@
     </section>
 
     <section class="main-content">
-      <h1>
-    <p id="asd">Hello GitHub Page</p>  
-      
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
+    
+    <h1><a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
+    
+    <div id="myform">
+        <p> First Name :	<!--show message element-->
+            <input type="text" name="firstname" onBlur="validLite.getValidata(this);" placeholder="Required"
+                data-validata='{
+                    "pattern": "require",
+                    "error": {
+                        "errId":	"err_firstname",
+                        "errMsg":	"This is First Name Error message",
+                        "errClass":	"errorClass"
+                    },
+                    "correct": {
+                        "corId":	"cor_firstname",
+                        "corMsg":	"This is First Name Correct message",
+                        "corClass":	"correctClass"
+                    }
+                }'
+            />
+            <span id="err_firstname" class="CSS3 flash errElemClass" style="display:none;">This is First Name Error</span>
+            <span id="cor_firstname" class="CSS3 flash corElemClass" style="display:none;">This is First Name Correct</span>
+        </p>
+        <p> Surname :		<!--create message element-->
+            <input type="text" name="surname" onBlur="validLite.getValidata(this);" placeholder="Required"
+                data-validata='{
+                    "pattern": "require",
+                    "error": {
+                        "errId":	"err_Surname",
+                        "errMsg":	"This is Surname Error message",
+                        "errClass":	"errorClass"
+                    },
+                    "correct": {
+                        "corId":	"cor_Surname",
+                        "corMsg":	"This is Surname Correct message",
+                        "corClass":	"correctClass"
+                    }
+                }'
+            />
+        </p>
+        <p> *Mobile :		<!--without correct message and anti-validate-->
+            <input type="text" name="mobile" onBlur="validLite.getValidata(this);" placeholder="0912345678"
+                data-validata='{
+                    "pattern": "mobile",
+                    "error": {
+                        "errId":	"err_mobile",
+                        "errMsg":	"This is Mobile Error message",
+                        "errClass":	"errorClass"
+                    },
+                    "mode": "false"
+                }'
+            />
+            <span id="err_mobile" class="CSS3 flash errElemClass" style="display:none;">This is Mobile Error</span>
+        </p>
+        <p> Telphone :		<!--without correct message and custom error class-->
+            <input type="text" name="telphone" onBlur="validLite.getValidata(this);" onClick="validLite.clearValidata(this);"
+                placeholder="02-1234-5678"
+                data-validata='{
+                    "pattern": "telphone",
+                    "error": {
+                        "errId":	"err_telphone",
+                        "errMsg":	"This is Telphone Error message"
+                    },
+                    "correct": {
+                        "corMsg":	"This is Telphone Correct message",
+                        "corClass":	"correctClass"
+                    }
+                }'
+            />
+            <span id="err_telphone" class="errElemClass" style="display:none;">This is Telphone Error</span>
+        </p>
+        <p> *Date :			<!--alert message and anti-validate-->
+            <select name="date" onBlur="validLite.getValidata(this);"
+                data-validata='{
+                    "pattern": "require",
+                    "mode": "false",
+                    "error": {
+                        "errId":	"alert",
+                        "errMsg":	"This is Date Error message"
+                    }
+                }'
+            >
+            <option value=""></option>
+            <option value="2013-12-01">2013-12-01</option>
+            <option value="2013-12-05">2013-12-05</option>
+            </select>
+        </p>
+        <input type="button" value="Surname" onClick="validLiteBtn('surname');"/>
+        <input type="button" value="Submit" onClick="validLite.getValidata();"/>
+        <input type="button" value="Clear" onClick="validLite.clearValidata();"/>
+        <span>*<i>Asterisk</i> is anti-validate</span>
+    </div>
 
-<h1>
-<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h1>
+    <h1><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h1>
 
 <h3>
 <a id="parameters-setting" class="anchor" href="#parameters-setting" aria-hidden="true"><span class="octicon octicon-link"></span></a>parameters setting</h3>
