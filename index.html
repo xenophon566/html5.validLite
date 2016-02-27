@@ -2,45 +2,12 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>My ValidLite</title>
-    <link rel="stylesheet" type="text/css" media="all" href="css/myStyle.css"/>
-    <link rel="stylesheet" type="text/css" media="all" href="css/animate.css"/>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/_jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="js/validLite.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Html5.validlite by xenophon566</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    
-    <script>
-    $(function(){
-        $("#myform").validLite({
-            pattern: {
-                number: /^\d+$/					//validate pattern (Default: myPattern)
-            },
-            setting: {
-                getValid: '#myform',			//get validate DOM (Default: body)
-                corMsgShow: true,				//show an correct message (Default: false)
-                errMsgShow: true,				//show an error message (Default: true)
-                corClassShow: true,				//show an correct class (Default: false)
-                errClassShow: true,				//show an error class (Default: true)
-                corClassName: 'correctClass',	//correct class name (Default: correctClass)
-                errClassName: 'errorClass',		//error class name (Default: errorClass)
-                corElem: 'span',				//create an element of correct message (Default: span)
-                errElem: 'span',				//create an element of error message (Default: span)
-                corElemClass: 'corElemClass',	//class of correct element (Default: corElemClass)
-                errElemClass: 'errElemClass'	//class of error element (Default: errElemClass)
-            }
-        });
-    });
-    function validLiteBtn(valid_Id) {	//Get the single validate result
-        alert( !!validLite.getValidata('input[name="'+valid_Id+'"]') );
-    }
-    </script>
-    
   </head>
   <body>
     <section class="page-header">
@@ -52,106 +19,14 @@
     </section>
 
     <section class="main-content">
-    
-    <h1><a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
-    
-    <a href="http://xenophon566.github.io/demo/html5.validLite/" style="color:rgb(21, 153, 87); text-decoration:none;"><b>Click to demonstration</b></a>
-    <br><br>
-    
-    <div id="myform">
-        <p> First Name :	<!--show message element-->
-            <input type="text" name="firstname" onBlur="validLite.getValidata(this);" placeholder="Required"
-                data-validata='{
-                    "pattern": "require",
-                    "error": {
-                        "errId":	"err_firstname",
-                        "errMsg":	"This is First Name Error message",
-                        "errClass":	"errorClass"
-                    },
-                    "correct": {
-                        "corId":	"cor_firstname",
-                        "corMsg":	"This is First Name Correct message",
-                        "corClass":	"correctClass"
-                    }
-                }'
-            />
-            <span id="err_firstname" class="CSS3 flash errElemClass" style="display:none;">This is First Name Error</span>
-            <span id="cor_firstname" class="CSS3 flash corElemClass" style="display:none;">This is First Name Correct</span>
-        </p>
-        <p> Surname :		<!--create message element-->
-            <input type="text" name="surname" onBlur="validLite.getValidata(this);" placeholder="Required"
-                data-validata='{
-                    "pattern": "require",
-                    "error": {
-                        "errId":	"err_Surname",
-                        "errMsg":	"This is Surname Error message",
-                        "errClass":	"errorClass"
-                    },
-                    "correct": {
-                        "corId":	"cor_Surname",
-                        "corMsg":	"This is Surname Correct message",
-                        "corClass":	"correctClass"
-                    }
-                }'
-            />
-        </p>
-        <p> *Mobile :		<!--without correct message and anti-validate-->
-            <input type="text" name="mobile" onBlur="validLite.getValidata(this);" placeholder="0912345678"
-                data-validata='{
-                    "pattern": "mobile",
-                    "error": {
-                        "errId":	"err_mobile",
-                        "errMsg":	"This is Mobile Error message",
-                        "errClass":	"errorClass"
-                    },
-                    "mode": "false"
-                }'
-            />
-            <span id="err_mobile" class="CSS3 flash errElemClass" style="display:none;">This is Mobile Error</span>
-        </p>
-        <p> Telphone :		<!--without correct message and custom error class-->
-            <input type="text" name="telphone" onBlur="validLite.getValidata(this);" onClick="validLite.clearValidata(this);"
-                placeholder="02-1234-5678"
-                data-validata='{
-                    "pattern": "telphone",
-                    "error": {
-                        "errId":	"err_telphone",
-                        "errMsg":	"This is Telphone Error message"
-                    },
-                    "correct": {
-                        "corMsg":	"This is Telphone Correct message",
-                        "corClass":	"correctClass"
-                    }
-                }'
-            />
-            <span id="err_telphone" class="errElemClass" style="display:none;">This is Telphone Error</span>
-        </p>
-        <p> *Date :			<!--alert message and anti-validate-->
-            <select name="date" onBlur="validLite.getValidata(this);"
-                data-validata='{
-                    "pattern": "require",
-                    "mode": "false",
-                    "error": {
-                        "errId":	"alert",
-                        "errMsg":	"This is Date Error message"
-                    }
-                }'
-            >
-            <option value=""></option>
-            <option value="2013-12-01">2013-12-01</option>
-            <option value="2013-12-05">2013-12-05</option>
-            </select>
-        </p>
-        <input type="button" value="Surname" onClick="validLiteBtn('surname');"/>
-        <input type="button" value="Submit" onClick="validLite.getValidata();"/>
-        <input type="button" value="Clear" onClick="validLite.clearValidata();"/>
-        <span>*<i>Asterisk</i> is anti-validate</span>
-    </div>
+      <h1>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h1>
 
-    <h1><a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h1>
+<h1>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h1>
 
 <h3>
-<a id="parameters-setting" class="anchor" href="#parameters-setting" aria-hidden="true"><span class="octicon octicon-link"></span></a>parameters setting</h3>
+<a id="parameters-setting" class="anchor" href="#parameters-setting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>parameters setting</h3>
 
 <div><pre>
 $(function(){
@@ -177,7 +52,7 @@ $(function(){
 </pre></div>
 
 <h3>
-<a id="common-function" class="anchor" href="#common-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Common function</h3>
+<a id="common-function" class="anchor" href="#common-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Common function</h3>
 
 <div><pre>
 validLite.getValidata(this);    //individual validate
@@ -187,20 +62,20 @@ validLite.clearValidata();  //clear overall message and class
 </pre></div>
 
 <h3>
-<a id="for-example-individual-validate" class="anchor" href="#for-example-individual-validate" aria-hidden="true"><span class="octicon octicon-link"></span></a>For example individual validate</h3>
+<a id="for-example-individual-validate" class="anchor" href="#for-example-individual-validate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For example individual validate</h3>
 
 <p><code>&lt;input type="text" name="require" onBlur="validLite.getValidata(this);"/&gt;</code></p>
 
 <h3>
-<a id="for-example-overall-validate" class="anchor" href="#for-example-overall-validate" aria-hidden="true"><span class="octicon octicon-link"></span></a>For example overall validate</h3>
+<a id="for-example-overall-validate" class="anchor" href="#for-example-overall-validate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For example overall validate</h3>
 
 <p><code>&lt;input type="button" value="Submit" onClick="validLite.getValidata();"/&gt;</code></p>
 
 <h1>
-<a id="document" class="anchor" href="#document" aria-hidden="true"><span class="octicon octicon-link"></span></a>Document</h1>
+<a id="document" class="anchor" href="#document" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Document</h1>
 
 <h3>
-<a id="setting-method" class="anchor" href="#setting-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>setting method</h3>
+<a id="setting-method" class="anchor" href="#setting-method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>setting method</h3>
 
 <div><pre>
 if( setting.errMsgShow == true ) {
@@ -210,38 +85,35 @@ if( setting.errMsgShow == true ) {
 </pre></div>
 
 <h1>
-<a id="validlite" class="anchor" href="#validlite" aria-hidden="true"><span class="octicon octicon-link"></span></a>ValidLite</h1>
-
-<h3>
-<a id="html5validlite-project" class="anchor" href="#html5validlite-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Html5.validLite project</h3>
+<a id="validlite" class="anchor" href="#validlite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ValidLite</h1>
 
 <h4>
-<a id="describe" class="anchor" href="#describe" aria-hidden="true"><span class="octicon octicon-link"></span></a>Describe</h4>
-
-<p>ValidLite is a lite validation plugin.</p>
-
-<h4>
-<a id="type" class="anchor" href="#type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Type</h4>
+<a id="type" class="anchor" href="#type" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Type</h4>
 
 <p>Frontend Plugin</p>
 
 <h4>
-<a id="feature" class="anchor" href="#feature" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature</h4>
+<a id="describe" class="anchor" href="#describe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Describe</h4>
+
+<p>A Frontend validation plugin.</p>
+
+<h4>
+<a id="feature" class="anchor" href="#feature" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feature</h4>
 
 <ol>
 <li> Easy to use.</li>
-<li> using data-* to validate your DOM element.</li>
-<li> You can customize validation pattern.</li>
-<li> Show custom messages by your own way.</li>
+<li> Using data-* to validate your fields.</li>
+<li> Customize validation pattern for each field.</li>
+<li> Customize validate messages and styles.</li>
 </ol>
 
 <h4>
-<a id="base-on" class="anchor" href="#base-on" aria-hidden="true"><span class="octicon octicon-link"></span></a>Base on</h4>
+<a id="base-on" class="anchor" href="#base-on" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Base on</h4>
 
 <p>HTML5, CSS3, Javascript, JQuery</p>
 
 <h4>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h4>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h4>
 
 <p>under the MIT License Copyright(c) 2013 Shawn Wu</p>
 
@@ -256,4 +128,3 @@ if( setting.errMsgShow == true ) {
   
   </body>
 </html>
-
