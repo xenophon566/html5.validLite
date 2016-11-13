@@ -1,20 +1,15 @@
-ValidLite
+Html5.validLite
 =========
 
-#### Type
-Frontend Plugin
+##### Describe
+form validation by data attributes and CSS3 messages
 
-#### Describe
-A Frontend validation plugin.
+##### Features
+1.	validate patterns setting by data attribute.
+2.	validate messages styling by CSS3.
 
-#### Feature
-1.	Easy to use.
-2.	Using data-* to validate your fields.
-3.	Customize validation pattern for each field.
-4.	Customize validate messages and styles.
+##### Base on
+HTML5, CSS3
 
-#### Base on
-HTML5, CSS3, Javascript, JQuery
-
-#### License
+##### License
 under the MIT License Copyright(c) 2013 Shawn Wu
