@@ -2,11 +2,11 @@ Html5.validLite
 =========
 
 ##### Describe
-form validation by data attributes and CSS3 messages
+form validation plugin lite
 
 ##### Features
-1.	validate patterns setting by data attribute.
-2.	validate messages styling by CSS3.
+1.	validate patterns at data attribute.
+2.	CSS3 validate messages.
 
 ##### Base on
 HTML5, CSS3
