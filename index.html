@@ -1,135 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
     <title>Html5.validlite by xenophon566</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/xenophon566/html5.validLite">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/xenophon566/html5.validLite/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/xenophon566/html5.validLite/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <header>
-      <div class="container">
-        <h1>Html5.validlite</h1>
-        <h2>Html5.validLite Project</h2>
+    <div class="wrapper">
 
-        <section id="downloads">
-          <a href="https://github.com/xenophon566/html5.validLite/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/xenophon566/html5.validLite/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/xenophon566/html5.validLite" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+      <section>
+        <div id="title">
+          <h1>Html5.validlite</h1>
+          <p>Html5.validLite Project</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/xenophon566">xenophon566</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
-    <div class="container">
-      <section id="main_content">
         <h1>
 <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h1>
 
 <p><a href="http://xenophon566.github.io/demo/html5.validLite/">Click to demonstration</a></p>
 
 <h1>
-<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h1>
-
-<h3>
-<a id="parameters-setting" class="anchor" href="#parameters-setting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>parameters setting</h3>
-
-<div><pre>
-$(function(){
-   $("#myform").validLite({
-      pattern: {
-        number: /^\d+$/     //validate pattern (Default: myPattern)
-      },
-      setting: {
-        getValid: '#myform',    //setting the validate scope (Default: body)
-        corMsgShow: true,   //show an correct message (Default: false)
-        errMsgShow: true,   //show an error message (Default: true)
-        corClassShow: true, //show an correct class (Default: false)
-        errClassShow: true, //show an error class (Default: true)
-        corClassName: 'correctClass',   //correct class name
-        errClassName: 'errorClass', //error class name
-        corElem: 'span',    //create an element of correct message
-        errElem: 'span',    //create an element of error message
-        corElemClass: 'corElemClass',   //class of correct element
-        errElemClass: 'errElemClass'    //class of error element
-      }
-   });
-});
-</pre></div>
-
-<h3>
-<a id="common-function" class="anchor" href="#common-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Common function</h3>
-
-<div><pre>
-validLite.getValidata(this);    //individual validate
-validLite.getValidata();    //overall validate
-validLite.clearValidata(this);  //clear individual message and class
-validLite.clearValidata();  //clear overall message and class
-</pre></div>
-
-<h3>
-<a id="for-example-individual-validate" class="anchor" href="#for-example-individual-validate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For example individual validate</h3>
-
-<p><code>&lt;input type="text" name="require" onBlur="validLite.getValidata(this);"/&gt;</code></p>
-
-<h3>
-<a id="for-example-overall-validate" class="anchor" href="#for-example-overall-validate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For example overall validate</h3>
-
-<p><code>&lt;input type="button" value="Submit" onClick="validLite.getValidata();"/&gt;</code></p>
-
-<h1>
-<a id="document" class="anchor" href="#document" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Document</h1>
-
-<h3>
-<a id="setting-method" class="anchor" href="#setting-method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>setting method</h3>
-
-<div><pre>
-if( setting.errMsgShow == true ) {
-   if( data.errId == !empty )
-      show message
-} else Do not show error message
-</pre></div>
-
-<h1>
 <a id="validlite" class="anchor" href="#validlite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ValidLite</h1>
 
 <h4>
-<a id="type" class="anchor" href="#type" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Type</h4>
-
-<p>Frontend Plugin</p>
-
-<h4>
-<a id="describe" class="anchor" href="#describe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Describe</h4>
-
-<p>A Frontend validation plugin.</p>
-
-<h4>
-<a id="feature" class="anchor" href="#feature" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feature</h4>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h4>
 
 <ol>
-<li> Easy to use.</li>
-<li> Using data-* to validate your fields.</li>
-<li> Customize validation pattern for each field.</li>
-<li> Customize validate messages and styles.</li>
+<li>set validation patterns to data-* attributes.</li>
+<li>set CSS3 styles to data-* attributes.</li>
 </ol>
 
 <h4>
 <a id="base-on" class="anchor" href="#base-on" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Base on</h4>
 
-<p>HTML5, CSS3, Javascript, JQuery</p>
+<p>HTML5, CSS3</p>
 
-<h4>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h4>
+<h3>
+<a id="individual-validations" class="anchor" href="#individual-validations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Individual validations</h3>
 
-<p>under the MIT License Copyright(c) 2013 Shawn Wu</p>
+<p><code>&lt;input type="text" name="require" onBlur="validLite.getValidata(this);"/&gt;</code></p>
+
+<h3>
+<a id="overall-validations" class="anchor" href="#overall-validations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overall validations</h3>
+
+<p><code>&lt;input type="button" value="Submit" onClick="validLite.getValidata();"/&gt;</code></p>
       </section>
-    </div>
 
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
