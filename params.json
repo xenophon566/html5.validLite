@@ -1,7 +1,7 @@
 {
   "name": "Html5.validlite",
   "tagline": "Html5.validLite Project",
-  "body": "#Demo\r\n[Click to demonstration](http://xenophon566.github.io/demo/html5.validLite/)\r\n\r\nValidLite\r\n=========\r\n\r\n#### Features\r\n1. set validation patterns to data-* attributes.\r\n2. set CSS3 styles to data-* attributes.\r\n\r\n#### Base on\r\nHTML5, CSS3\r\n\r\n###Individual validations\r\n`<input type=\"text\" name=\"require\" onBlur=\"validLite.getValidata(this);\"/>`\r\n\r\n###Overall validations\r\n`<input type=\"button\" value=\"Submit\" onClick=\"validLite.getValidata();\"/>`",
+  "body": "#Demo\r\n[Click to demonstration](http://xenophon566.github.io/stuffs/html5.validLite/)\r\n\r\nValidLite\r\n=========\r\n\r\n#### Features\r\n1. set validation patterns to data-* attributes.\r\n2. set CSS3 styles to data-* attributes.\r\n\r\n#### Base on\r\nHTML5, CSS3\r\n\r\n###Individual validations\r\n`<input type=\"text\" name=\"require\" onBlur=\"validLite.getValidata(this);\"/>`\r\n\r\n###Overall validations\r\n`<input type=\"button\" value=\"Submit\" onClick=\"validLite.getValidata();\"/>`",
   "google": "",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
