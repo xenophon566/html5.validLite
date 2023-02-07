@@ -1,15 +1,22 @@
-Html5.validLite
-=========
+# Html5.validLite
 
-##### Describe
+## Getting Started
+
+🌟 Open on browser directly
+
+## Stackblitz
+
+[Html5.validLite](https://stackblitz.com/edit/github-ddpypg?file=package.json)
+
+## Describe
+
 Form validations lite
 
-##### Features
+## Features
+
 1. set each field by data attributes (data-validata).
 2. stylize validation messages.
 
-##### Base on
-HTML5, CSS3
+## License
 
-##### License
-under the MIT License Copyright(c) 2013 Shawn Wu
+under the MIT License Copyright (c) {{2013 Shawn Wu}}
